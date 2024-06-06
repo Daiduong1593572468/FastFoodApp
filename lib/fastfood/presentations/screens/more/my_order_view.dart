@@ -2,7 +2,6 @@ import 'package:fastfood/common/color_extension.dart';
 import 'package:fastfood/common_widget/round_button.dart';
 import 'package:flutter/material.dart';
 
-
 import 'checkout_view.dart';
 
 class MyOrderView extends StatefulWidget {
@@ -13,6 +12,7 @@ class MyOrderView extends StatefulWidget {
 }
 
 class _MyOrderViewState extends State<MyOrderView> {
+  List<Map<String, dynamic>> cart = [];
   List itemArr = [
     {"name": "Beef Burger", "qty": "1", "price": 16.0},
     {"name": "Classic Burger", "qty": "1", "price": 14.0},
@@ -187,7 +187,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                   physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   padding: EdgeInsets.zero,
-                  itemCount: itemArr.length,
+                  itemCount: cart.length,
                   separatorBuilder: ((context, index) => Divider(
                         indent: 25,
                         endIndent: 25,
@@ -195,7 +195,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                         height: 1,
                       )),
                   itemBuilder: ((context, index) {
-                    var cObj = itemArr[index] as Map? ?? {};
+                    var cObj = cart[index] as Map? ?? {};
                     return Container(
                       padding: const EdgeInsets.symmetric(
                           vertical: 15, horizontal: 25),
@@ -204,7 +204,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                         children: [
                           Expanded(
                             child: Text(
-                              "${cObj["name"].toString()} x${cObj["qty"].toString()}",
+                              "${cObj["Name"].toString()} x${cObj["qty"].toString()}",
                               style: TextStyle(
                                   color: TColor.primaryText,
                                   fontSize: 13,

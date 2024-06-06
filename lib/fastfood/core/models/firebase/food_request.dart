@@ -18,4 +18,12 @@ class FoodRequest {
           .where((food) =>
               food.Name.toLowerCase().contains(searchValue.toLowerCase()))
           .toList());
+
+      static Future<Food> getById(String Id) async {
+    DocumentSnapshot<Map<String, dynamic>> doc =
+        await FirebaseFirestore.instance.collection('Food').doc(Id).get();
+    Food food = Food.fromJson(doc.data()!);
+    return Future.value(food);
+  }
+
 }

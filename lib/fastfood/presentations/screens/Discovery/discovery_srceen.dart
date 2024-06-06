@@ -302,17 +302,16 @@ class _DiscoveryScreenState extends State<DiscoveryScreen> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const ItemDetailsView()),
+                                            builder: (context) =>
+                                                ItemDetailsView(
+                                                    food:
+                                                        snapshot.data![index]),
+                                          ),
                                         );
                                       },
                                       child: FoodItem(
                                         food: snapshot.data![index],
                                       ));
-
-                                  FoodItem(
-                                    food: snapshot.data![index],
-                                  );
                                 }),
                               ),
                             ],

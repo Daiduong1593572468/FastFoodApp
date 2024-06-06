@@ -166,11 +166,11 @@ class _MenuItemsViewState extends State<MenuItemsView> {
                   return MenuItemRow(
                     mObj: mObj,
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const ItemDetailsView()),
-                      );
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //       builder: (context) => const ItemDetailsView()),
+                      // );
                     },
                   );
                 }),
