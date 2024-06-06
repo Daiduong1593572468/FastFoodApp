@@ -1,14 +1,16 @@
 import 'dart:io';
+import 'package:fastfood/fastfood/main.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:melody/app_theme.dart';
+import 'package:fastfood/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:melody/melody/core/helper/local_storage_helper.dart';
-import 'package:melody/melody/presentations/screens/splash/splash_screen.dart';
+import 'package:fastfood/fastfood/core/helper/local_storage_helper.dart';
+import 'package:fastfood/fastfood/presentations/screens/splash/splash_screen.dart';
+import 'package:fastfood/fastfood/presentations/screens/account/login_screen.dart';
 import 'navigation_home_screen.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 
-import 'melody/core/models/firebase/firebase_request.dart';
+import 'fastfood/core/models/firebase/firebase_request.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,7 +19,7 @@ void main() async {
   await LocalStorageHelper.initLocalStorageHelper();
   WidgetsFlutterBinding.ensureInitialized();
   await FireBaseDataBase.initializeDB();
-  
+
   await SystemChrome.setPreferredOrientations(<DeviceOrientation>[
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown
@@ -44,7 +46,7 @@ class MyApp extends StatelessWidget {
         textTheme: AppTheme.textTheme,
         platform: TargetPlatform.iOS,
       ),
-      home: SplashScreen(),
+      home: melodyApp(),
     );
   }
 }

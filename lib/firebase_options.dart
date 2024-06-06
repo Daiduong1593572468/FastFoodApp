@@ -17,29 +17,17 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -53,10 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCljKqYrGAgx7_mgE9PuYg03tf9nI8SGTc',
-    appId: '1:683918464292:android:95393a0db7708208ba8fb1',
-    messagingSenderId: '683918464292',
-    projectId: 'windou',
-    storageBucket: 'windou.appspot.com',
+    apiKey: 'AIzaSyBrVBfEfvQT0Rw3UK_8tdGWq6iIJBr3UJw',
+    appId: '1:1094274305500:android:ba7a0ccee32fc7bbef9319',
+    messagingSenderId: '1094274305500',
+    projectId: 'fastfood-44fcd',
+    storageBucket: 'fastfood-44fcd.appspot.com',
   );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyDDcGOoK4p07hnji2duT4S5sNFmPPYHO4M',
+    appId: '1:1094274305500:web:1a772c2eacc840ceef9319',
+    messagingSenderId: '1094274305500',
+    projectId: 'fastfood-44fcd',
+    authDomain: 'fastfood-44fcd.firebaseapp.com',
+    storageBucket: 'fastfood-44fcd.appspot.com',
+    measurementId: 'G-5EXL7SM7QC',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyAbjjhUiroYa2Qfmg_ELXn6pk34duVJx-8',
+    appId: '1:1094274305500:ios:a2db32c234701014ef9319',
+    messagingSenderId: '1094274305500',
+    projectId: 'fastfood-44fcd',
+    storageBucket: 'fastfood-44fcd.appspot.com',
+    iosBundleId: 'com.example.melody',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyAbjjhUiroYa2Qfmg_ELXn6pk34duVJx-8',
+    appId: '1:1094274305500:ios:a2db32c234701014ef9319',
+    messagingSenderId: '1094274305500',
+    projectId: 'fastfood-44fcd',
+    storageBucket: 'fastfood-44fcd.appspot.com',
+    iosBundleId: 'com.example.melody',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyDDcGOoK4p07hnji2duT4S5sNFmPPYHO4M',
+    appId: '1:1094274305500:web:fa8cf6fded700978ef9319',
+    messagingSenderId: '1094274305500',
+    projectId: 'fastfood-44fcd',
+    authDomain: 'fastfood-44fcd.firebaseapp.com',
+    storageBucket: 'fastfood-44fcd.appspot.com',
+    measurementId: 'G-EEPPW9QEW8',
+  );
+
 }

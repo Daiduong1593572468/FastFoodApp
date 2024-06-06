@@ -1,5 +1,5 @@
-import 'package:melody/app_theme.dart';
-import 'package:melody/custom_drawer/home_drawer.dart';
+import 'package:fastfood/app_theme.dart';
+import 'package:fastfood/custom_drawer/home_drawer.dart';
 import 'package:flutter/material.dart';
 
 class DrawerUserController extends StatefulWidget {

@@ -1,4 +1,4 @@
-import 'package:melody/app_theme.dart';
+import 'package:fastfood/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class InviteFriend extends StatefulWidget {
